@@ -1,0 +1,137 @@
+#Nama : Marhana
+#Nim : D0221066
+#Kelas : Infomatika (E)
+
+class BangunDatar:
+    def luas(self):
+        pass
+
+class Persegi(BangunDatar):
+    def _init_(self, sisi):
+        self.sisi = sisi
+
+    def luas(self):
+        return self.sisi**2
+
+class Segitiga(BangunDatar):
+    def _init_(self,alas,tinggi) :
+        self.alas = alas
+        self.tinggi = tinggi
+
+    def luas(self):
+        return self.alas * self.tinggi / 2
+
+class Lingkaran(BangunDatar):
+    def _init_(self,jari2):
+        self.phi = 22/7
+        self.jari2 = jari2
+
+    def luas(self):
+        return self.phi * (self.jari2**2)
+
+class BangunRuang:
+    def volume(self):
+        pass
+
+class Kubus(BangunRuang):
+    def _init_(self, sisi):
+        self.sisi = sisi
+
+    def volume(self):
+        return self.sisi**3
+
+class Limas(BangunRuang):
+    def _init_(self,panjang_alas,tinggi_alas,tinggi_limas):
+        self.panjang_alas = panjang_alas
+        self.tinggi_alas = tinggi_alas
+        self.tinggi_limas = tinggi_limas
+
+    def volume(self):
+        return (self.panjang_alas*self.tinggi_alas/2) * self.tinggi_limas / 3
+
+class Tabung(BangunRuang):
+    def _init_(self,jari2,tinggi):
+        self.phi = 22/7
+        self.jari2 = jari2
+        self.tinggi = tinggi
+
+    def volume(self):
+        return self.phi * (self.jari2**2) * self.tinggi
+    
+def pilihan():
+    list = ['1.Bangun Datar','2. Bangun Ruang']
+    for i in list:
+        print(i)
+    masukkan = input("masukkan pilihan anda : ")
+    if masukkan == "1":
+        menu_bangundatar()
+    elif masukan == "2":
+        menu_bangunruang()
+    else:
+        print("kode yang anda masukkan salah")
+        lanjut = input("Lanjut or no (y,n) : ")
+        if lanjut == "y" and "Y":
+            pilihan()
+        elif lanjut == "n" and "N":
+            print("program selesai")
+            pass
+def menu_bangundatar():
+    print("MENU BANGUN DATAR".center (40, ' '))
+    datar = ['1.persegi','2.segitiga','lingkaran','4.kembali_kemenu','5.exit']
+    for i in daftar:
+        print(i)
+        
+    pilihan = int(input("masukkan pilihan anda : "))
+    if pilihan == 1 :
+        print("menghitung luas persegi")
+        sisi = int(input("masukkan panjang sisi : "))
+        persegi = persegi(sisi)
+        print("luas persegi : ",persegi.luas())
+        
+    elif pilihan == 2 :
+        print("menghitung luas persegi")
+        alas = int(input("masukkan panjang alas segitiga : "))
+        tinggi = int(input("masukkan panjang tinggi segitiga : "))
+        segitiga = segitiga(alas,tinggi)
+        print("luas lingkaran = ",segitiga.luas())
+        
+    elif pilihan == 4 :
+        pilihan()
+    elif pilihan == 5 :
+        print("program selesai")
+        pass
+    else:
+        print("masukkan kode dengab benar!")
+        
+def menu_bangundatar():
+    print("MENU BANGUN RUANG".center(40, ' '))
+    daftar = ['1.kubus','2.limas','3.tabung','4.kembali ke menu','5.exit']
+    for i in daftar:
+        print(i)
+        
+    pilihan = int(input("masukkan pilihan anda : "))
+    if pilihan == 1 :
+        print("menghitung volume kubus")
+        sisi = int(input("masukkan panjang sisi  : "))
+        kubus = kubus(sisi)
+        print("volume kubus = ",kubus.volume())
+    elif pilihan == 2 :
+        print("menghitung volume limas segitiga")
+        alas = int(input("masukkan panjang sisi segitiga : "))
+        tinggi_alas = int(input("masukkan panjang tinggi alas segitiga : "))
+        tinggi_timas = int(input("masukkan panjang tinggi alas : "))
+        limas = limas(alas,tinggi_alas,tinggi_limas)
+        print("volume limas segitiga = ",limas.volume())
+    elif pilihan == 3 :
+        print("menghitung volume tabung")
+        jari2 = int(input("masukkan panjang jari-jari : "))
+        tinggi = int(input("masukkan tinggi tabung : "))
+        tabung = tabung(jari2,tinggi)
+        print("volume tabung = ",int(tabung.volume()))
+    elif pilihan == 4 :
+        pilihan()
+    elif pilihan == 5 :
+        print('program selesai')
+        pass
+    else:
+        print("masukkan kode menu dengan benar!")
